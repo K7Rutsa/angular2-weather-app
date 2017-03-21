@@ -1,0 +1,47 @@
+ <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-cloud"></span> Weather App</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <div class="container">
+      <div class="row wrapper">
+        <form (submit)="getWeather(text.value)">
+          <div class="col-md-11">
+			       <input type="text" class="form-control" #text autofocus placeholder="Please type in your city name.....">
+          </div>
+        </form>
+           <div class="col-md-1"> 
+              <button type="button" class="btn btn-primary" (click)="getWeather(text.value)">Search</button>
+           </div>
+        </div>
+  </div>
+
+  <div class="container weather" *ngIf="wdata">
+    <div class="row wrapper">
+        <div class="col-md-10" >
+            <div class="panel panel-primary">
+              <div class="panel-heading" *ngFor="let item of wArr"> <h5>Current weather for {{wdata.name}}({{wdata.sys.country}}) </h5><img src="http://openweathermap.org/img/w/{{item.icon}}.png"> {{item.description | uppercase}} </div>
+              <div class="panel-body">
+                  <p> Temperature: {{wdata.main.temp | round}}&deg;C </p>
+                  <p> Humidity: {{wdata.main.humidity}} %</p>
+                  <p> Wind: {{wdata.wind.speed}} m/sec </p>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+

@@ -1,0 +1,29 @@
+body {
+  padding-top: 50px;
+}
+
+.wrapper {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.navbar-brand, h5 {
+	color: #fff;
+}
+
+p {
+	font-size: 25px;
+}
+
+.glyphicon-cloud {
+	font-size: 25px;
+}
+
+.weather {
+	max-width: 500px;
+}
