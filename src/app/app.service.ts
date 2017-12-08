@@ -10,13 +10,13 @@ export class AppService {
 	constructor(private _htpp: Http) {}
 
 	get(city){
-		return this._htpp.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&apikey=d72749f618ebb5e1c0008c57a981db4c&units=metric`)
+		return this._htpp.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&apikey=d72749f618ebb5e1c0008c57a981db4c&units=metric`)
 			.map((res: Response) => res.json())
 		    .catch(this.errorHandler)
 	}
 
 	getWeatherArr(city){
-		return this._htpp.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&apikey=d72749f618ebb5e1c0008c57a981db4c&units=metric`)
+		return this._htpp.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&apikey=d72749f618ebb5e1c0008c57a981db4c&units=metric`)
 			.map((res: Response) => res.json().weather)
 		    .catch(this.errorHandler)
 	}
